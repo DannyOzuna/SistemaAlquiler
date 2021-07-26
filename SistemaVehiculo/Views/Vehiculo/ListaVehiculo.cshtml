@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SistemaVehiculo.Models.MVehiculos>
+
+@{
+    ViewData["Title"] = "ListaVehiculo";
+}
+
+<h1>ListaVehiculo</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<input type="text"  placeholder="Busque por Tipo"/>
+
+<input type="text" placeholder="Busque por Marca" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
