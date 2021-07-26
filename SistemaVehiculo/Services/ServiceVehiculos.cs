@@ -11,9 +11,9 @@ namespace SistemaVehiculo.Services
     {
         Context db = new Context();
 
-        public List<MVehiculos> listar()
+        public List<MVehiculos> listar(string marca)
         {
-            var query = db.vehiculos.ToList();
+            var query = db.vehiculos.Where(x => x.tipo == marca || marca == null || x.modelo == marca || x.modelo == null).ToList();
             return query;
         } 
 

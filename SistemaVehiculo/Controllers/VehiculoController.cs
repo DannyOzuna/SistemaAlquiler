@@ -16,9 +16,9 @@ namespace SistemaVehiculo.Controllers
         }
 
 
-        public ActionResult ListaVehiculo()
+        public ActionResult ListaVehiculo(string marca)
         {
-           var lista = services.listar();
+           var lista = services.listar(marca);
             return View(lista);
         }
 
