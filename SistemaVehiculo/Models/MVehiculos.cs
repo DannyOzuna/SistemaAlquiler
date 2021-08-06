@@ -29,11 +29,3 @@ namespace SistemaVehiculo.Models
 
     }
 }
-
-
-//    create table Vehiculos(
-//id int primary key identity,
-//marca varchar(50) not null,
-//modelo varchar(50) not null,
-//tipo varchar(50) not null
-//);

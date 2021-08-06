@@ -4,40 +4,34 @@
     ViewData["Title"] = "ListaVehiculo";
 }
 
-<h1>ListaVehiculo</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
-
+<h1>Lista de Vehículos</h1>
 
 
 @using (Html.BeginForm())
 {
-    @Html.Label("Por Tipo o por Modelo");
-    @Html.TextBox("marca");
-
-    <input type="submit" value="Buscar" class="btn btn-success right">
+    <div class="form-group mt-5">
+        <label for="marca">Filtrar: </label>
+        <input name="marca" id="marca" />
+        <input type="submit" value="Buscar" class="btn btn-outline-success">
+    </div>
 }
 
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.id)
+                ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.marca)
+                Marca
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.modelo)
+                Modelo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.tipo)
+                Tipo
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -55,11 +49,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.tipo)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
                 </td>
             </tr>
         }
